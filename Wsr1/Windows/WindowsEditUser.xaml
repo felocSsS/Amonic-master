@@ -1,0 +1,100 @@
+﻿<Window x:Class="Wsr1.Windows.WindowsEditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wsr1.Windows"
+        mc:Ignorable="d"
+        Title="WindowsEditUser" Height="450" Width="500"
+        WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Name="GridDragMove"
+              MouseDown="GridDragMove_MouseDown"
+              Background="White">
+        </Grid>
+        <Grid Grid.Row="1"
+              Width="350"
+              Height="300"
+              VerticalAlignment="Top"
+              Margin="0 30 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Height="25"
+                       Text="Email address:   "
+                       TextAlignment="Right"
+                       FontSize="18"/>
+            <TextBlock Height="25"
+                       Text="First name:   "
+                       TextAlignment="Right"
+                       FontSize="18"
+                       Grid.Column="0"
+                       Grid.Row="1"/>
+            <TextBlock Height="25"
+                       Text="Last name:   "
+                       TextAlignment="Right"
+                       FontSize="18"
+                       Grid.Column="0"
+                       Grid.Row="2"/>
+            <TextBox Grid.Column="1"
+                     Grid.Row="0"
+                     Height="25"
+                     Width="180"
+                     Name="tbEmail"
+                     FontSize="16"
+                     Style="{StaticResource TB}"/>
+            <TextBox Grid.Column="1"
+                     Grid.Row="1"
+                     Height="25"
+                     Width="180"
+                     Name="tbFirstName"
+                     FontSize="16"
+                     Style="{StaticResource TB}"/>
+            <TextBox Grid.Column="1"
+                     Grid.Row="2"
+                     Height="25"
+                     Width="180"
+                     Name="tbLastName"
+                     FontSize="16"
+                     Style="{StaticResource TB}"/>
+        </Grid>
+        <Grid Grid.Row="2"
+              Height="80"
+              Width="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource btnNew}"
+                    Background="DodgerBlue"
+                    Height="40"
+                    Width="130"
+                    Content="Apply"
+                    Name="btnSave"
+                    Click="btnSave_Click"/>
+            <Button Style="{StaticResource btnNew}"
+                    Background="Red"
+                    Height="40"
+                    Width="130"
+                    Content="Cancel"
+                    Grid.Column="1"
+                    Name="btnCancel"
+                    Click="btnCancel_Click"/>
+        </Grid>
+    </Grid>
+</Window>

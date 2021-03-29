@@ -1,0 +1,87 @@
+﻿<Page x:Class="Wsr1.User.PageUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wsr1.User"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageUser">
+
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="35"/>
+        <RowDefinition Height="80"/>
+        <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Menu FontWeight="Bold"
+                  FontSize="15">
+                <MenuItem Header="Exit"
+                          Width="100"
+                          Height="30"/>
+            </Menu>
+        </StackPanel>
+        <StackPanel Grid.Row="1"
+                    Height="40"
+                    VerticalAlignment="Top">
+            <TextBlock Text="тут будет текст"
+                       Margin="130 0 0 0"
+                       FontSize="16"
+                       Name="tbName"/>
+        </StackPanel>
+        <Grid Grid.Row="1"
+              Height="40"
+              VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1*"/>  
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Text="Time spent on system:"/>
+            <TextBlock Grid.Column="2"
+                       FontSize="15"
+                       Text="Тут будет время"
+                       VerticalAlignment="Center"
+                       Name="tbSpentTime"/>
+            <TextBlock Grid.Column="3"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Text="Number of crashes:"
+                       Name="tbCrush"/>
+            <TextBlock Grid.Column="4"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Text="тут будет число крашей"/>
+        </Grid>
+        <DataGrid Grid.Row="2"
+                  CanUserSortColumns="False"
+                  AutoGenerateColumns="False"
+                  VerticalScrollBarVisibility="Auto"
+                  IsReadOnly="True"
+                  Name="UserDataGrid"> 
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" 
+                                    Width="1*"
+                                    Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Login Time" 
+                                    Width="1*"
+                                    Binding="{Binding TimeLogin}"/>
+                <DataGridTextColumn Header="Logout Time" 
+                                    Width="1*"
+                                    Binding="{Binding TimeLogout}"/>
+                <DataGridTextColumn Header="Time spent on system" 
+                                    Width="1.5*"
+                                    Binding="{Binding TimeSpentInOneSession}"/>
+                <DataGridTextColumn Header="Unsuccessful logout reason" 
+                                    Width="1.5*"
+                                    Binding="{Binding FeedBack}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
